@@ -1,0 +1,36 @@
+<div class="container my-5">
+  <h2 class="mb-4 text-center card h-100 shadow-sm p-3">Nossos Produtos</h2>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 mb-4" *ngFor="let produto of produtos">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title text-primary">{{ produto.nome }}</h5>
+
+          <h6 class="card-subtitle mb-2 text-muted">
+            {{ produto.preco | currency : 'BRL' : 'symbol' }}
+          </h6>
+
+          <p class="card-text flex-grow-1">{{ produto.descricao }}</p>
+
+          <span
+            class="badge text-white p-2"
+            [ngClass]="produto.emEstoque ? 'bg-success' : 'bg-danger'"
+          >
+            {{ produto.emEstoque ? 'Disponível em Estoque' : 'Esgotado' }}
+          </span>
+
+          <button
+            class="btn btn-sm mt-3"
+            [ngClass]="produto.emEstoque ? 'btn-success' : 'btn-secondary'"
+            [disabled]="!produto.emEstoque"
+          >
+            {{ produto.emEstoque ? 'Comprar' : 'Ver Produto' }}
+          </button>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

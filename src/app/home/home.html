@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col">
+    <button (click)="MostrarOcultarBanner()" class="btn btn-primary mb-4">
+      {{ showBanner ? 'Ocultar Banner' : 'Mostrar Banner' }}
+    </button>
+  </div>
+</div>
+<div *ngIf="showBanner" class="alert alert-warning text-center p-4">
+  <h1 class="alert-heading">🎉 Super Promoção de Outono!</h1>
+  <img src="../assets/BannerPromocional.png" alt="Banner Promocional" />
+  <p class="lead">Aproveite até 50% de desconto em itens selecionados por tempo limitado.</p>
+  <button class="btn btn-lg btn-danger mt-2">Compre Agora</button>
+</div>
