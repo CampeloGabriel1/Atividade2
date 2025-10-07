@@ -9,7 +9,7 @@
 
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="text-success font-weight-bold mb-0">
-          {{ produto.preco | currency : 'BRL' : 'symbol' : '1.2-2' }}
+          {{ produto.preco | currency : 'BRL' : 'symbol' }}
         </h2>
 
         <span class="badge fs-5 p-2" [ngClass]="produto.emEstoque ? 'bg-success' : 'bg-danger'">
@@ -33,6 +33,8 @@
   </div>
 
   <div class="mt-4">
-    <a routerLink="/produto" class="btn btn-outline-secondary"> Voltar para o catalógo de produtos </a>
+    <a routerLink="/produto" class="btn btn-outline-secondary">
+      Voltar para o catalógo de produtos
+    </a>
   </div>
 </div>
